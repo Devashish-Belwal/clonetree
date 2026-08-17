@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #ffffff;
+}
+
+@theme {
+  --breakpoint-sm: 30rem;
+
+  /* This is the font imported in layout.tsx */
+  --font-sans: var(--font-link-sans);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-chartreuse: #D2E823;
+  --color-section2: #2665D6;
+  --color-forest: #1B1B1B;
+  --color-marble: #F7F5F2;
+  --color-shade: #1B1B1B;
+  --color-prefooter: #F3F3F1;
+
+  --radius-pill: 999px;
+
+  --text-h1: clamp(2.5rem, 5.4vw, 4.875rem);
+  --text-body: 1.125rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-link-sans) !important;
+}
+
+@keyframes hero-tower-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-1 * var(--card-step) * 5));
+  }
+}
+
+.makeithover {
+  transition: transform 50ms ease;
+}
+
+.makeithover:hover {
+  transform: translateY(-2px);
+}
